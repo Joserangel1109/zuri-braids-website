@@ -27,6 +27,4 @@ El sitio incluye información de servicios, contacto y un sistema de reservas en
 ---
 
 ## 👨‍💻 Autor
-- Desarrollado por **TU NOMBRE**  
-- 📧 Contacto: [tuemail@ejemplo.com](mailto:tuemail@ejemplo.com)
-
+- Desarrollado por Genesis Coronado 
