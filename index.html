@@ -11,395 +11,407 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 <style>
 :root {
-  --gold: #D4AF37;
-  --terracotta: #8B4513;
-  --ivory: #FFF8DC;
-  --olive: #6B8E23;
-  --chocolate: #3C1810;
-  --beige: #F5F5DC;
-  --coral: #FF6B6B;
-  --charcoal: #36454F;
-  --white: #FFFFFF;
-  --font-heading: 'Playfair Display', serif;
-  --font-subtitle: 'Montserrat', sans-serif;
-  --font-body: 'Open Sans', sans-serif;
+    --gold: #D4AF37;
+    --terracotta: #8B4513;
+    --ivory: #FFF8DC;
+    --olive: #6B8E23;
+    --chocolate: #3C1810;
+    --beige: #F5F5DC;
+    --coral: #FF6B6B;
+    --charcoal: #36454F;
+    --white: #FFFFFF;
+    --font-heading: 'Playfair Display', serif;
+    --font-subtitle: 'Montserrat', sans-serif;
+    --font-body: 'Open Sans', sans-serif;
 }
-* {margin:0; padding:0; box-sizing:border-box;}
-body {font-family: var(--font-body); line-height:1.6; color:var(--charcoal); background-color:var(--ivory);}
-.header {background: linear-gradient(135deg, var(--terracotta), var(--chocolate)); color:var(--white); padding:1rem 0; position:fixed; width:100%; top:0; z-index:1000; box-shadow:0 2px 10px rgba(0,0,0,0.1);}
-.nav-container {max-width:1200px; margin:0 auto; display:flex; justify-content:space-between; align-items:center; padding:0 2rem;}
-.logo {font-family: var(--font-heading); font-size:1.8rem; font-weight:700; color:var(--gold); text-decoration:none;}
-.nav-menu {display:flex; list-style:none; gap:2rem;}
-.nav-menu a {color:var(--white); text-decoration:none; font-family: var(--font-subtitle); font-weight:500; transition: color 0.3s;}
-.nav-menu a:hover {color:var(--gold);}
-.cta-button {background:var(--coral); color:var(--white); padding:0.8rem 1.5rem; border:none; border-radius:25px; font-family: var(--font-subtitle); font-weight:600; cursor:pointer; transition:all 0.3s; text-decoration:none;}
-.cta-button:hover {background:#ff5252; transform:translateY(-2px); box-shadow:0 5px 15px rgba(255,107,107,0.4);}
-.hamburger {display:none; flex-direction:column; cursor:pointer;}
-.hamburger span {width:25px; height:3px; background:var(--white); margin:3px 0; transition:0.3s;}
-/* Language selector */
-.language-selector {margin-left:1rem; background:var(--gold); color:var(--charcoal); border:none; padding:0.5rem 1rem; border-radius:5px; font-weight:600; cursor:pointer;}
-.language-selector:hover {background:#b8941f;}
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family: var(--font-body); line-height:1.6; color:var(--charcoal); background-color:var(--ivory); }
+
+/* Header */
+.header {
+    background: linear-gradient(135deg, var(--terracotta), var(--chocolate));
+    color: var(--white);
+    padding: 1rem 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+.nav-container {
+    max-width: 1200px;
+    margin:0 auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:0 2rem;
+}
+.logo { font-family: var(--font-heading); font-size:1.8rem; font-weight:700; color: var(--gold); text-decoration:none; }
+.nav-menu { display:flex; list-style:none; gap:2rem; }
+.nav-menu a { color: var(--white); text-decoration:none; font-family: var(--font-subtitle); font-weight:500; transition: color 0.3s; }
+.nav-menu a:hover { color: var(--gold); }
+.cta-button { background: var(--coral); color: var(--white); padding:0.8rem 1.5rem; border:none; border-radius:25px; font-family: var(--font-subtitle); font-weight:600; cursor:pointer; transition: all 0.3s; text-decoration:none; }
+.cta-button:hover { background: #ff5252; transform: translateY(-2px); box-shadow: 0 5px 15px rgba(255,107,107,0.4); }
+.hamburger { display:none; flex-direction: column; cursor:pointer; }
+.hamburger span { width:25px; height:3px; background:var(--white); margin:3px 0; transition:0.3s; }
+
 /* Hero Section */
-.hero {background: linear-gradient(rgba(139,69,19,0.8), rgba(60,24,16,0.8)), url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%238B4513" width="1200" height="600"/><path fill="%23D4AF37" opacity="0.1" d="M0,400 Q300,200 600,400 T1200,400 L1200,600 L0,600 Z"/></svg>'); background-size:cover; background-position:center; height:100vh; display:flex; align-items:center; justify-content:center; text-align:center; color:var(--white); margin-top:80px;}
-.hero-content {max-width:800px; padding:0 2rem;}
-.hero h1 {font-family: var(--font-heading); font-size:3.5rem; margin-bottom:1rem; color:var(--gold); text-shadow:2px 2px 4px rgba(0,0,0,0.3);}
-.hero p {font-size:1.3rem; margin-bottom:2rem; opacity:0.9;}
-.hero-buttons {display:flex; gap:1rem; justify-content:center; flex-wrap:wrap;}
-.btn-primary {background:var(--gold); color:var(--charcoal); padding:1rem 2rem; border:none; border-radius:30px; font-family: var(--font-subtitle); font-weight:600; cursor:pointer; transition:all 0.3s; text-decoration:none; display:inline-block;}
-.btn-primary:hover {background:#b8941f; transform:translateY(-2px); box-shadow:0 5px 15px rgba(212,175,55,0.4);}
-.btn-secondary {background:transparent; color:var(--white); padding:1rem 2rem; border:2px solid var(--white); border-radius:30px; font-family: var(--font-subtitle); font-weight:600; cursor:pointer; transition:all 0.3s; text-decoration:none; display:inline-block;}
-.btn-secondary:hover {background:var(--white); color:var(--terracotta);}
+.hero { background: linear-gradient(rgba(139,69,19,0.8), rgba(60,24,16,0.8)), url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%238B4513" width="1200" height="600"/><path fill="%23D4AF37" opacity="0.1" d="M0,400 Q300,200 600,400 T1200,400 L1200,600 L0,600 Z"/></svg>');
+background-size:cover; background-position:center; height:100vh; display:flex; align-items:center; justify-content:center; text-align:center; color:var(--white); margin-top:80px; }
+.hero-content { max-width:800px; padding:0 2rem; }
+.hero h1 { font-family: var(--font-heading); font-size:3.5rem; margin-bottom:1rem; color: var(--gold); text-shadow: 2px 2px 4px rgba(0,0,0,0.3);}
+.hero p { font-size:1.3rem; margin-bottom:2rem; opacity:0.9; }
+.hero-buttons { display:flex; gap:1rem; justify-content:center; flex-wrap:wrap; }
+.btn-primary { background: var(--gold); color: var(--charcoal); padding:1rem 2rem; border:none; border-radius:30px; font-family: var(--font-subtitle); font-weight:600; cursor:pointer; transition: all 0.3s; text-decoration:none; display:inline-block;}
+.btn-primary:hover { background:#b8941f; transform:translateY(-2px); box-shadow: 0 5px 15px rgba(212,175,55,0.4);}
+.btn-secondary { background:transparent; color: var(--white); padding:1rem 2rem; border:2px solid var(--white); border-radius:30px; font-family: var(--font-subtitle); font-weight:600; cursor:pointer; transition: all 0.3s; text-decoration:none; display:inline-block;}
+.btn-secondary:hover { background: var(--white); color: var(--terracotta); }
+
 /* Services Section */
-.services {padding:5rem 0; background:var(--white);}
-.container {max-width:1200px; margin:0 auto; padding:0 2rem;}
-.section-title {font-family: var(--font-heading); font-size:2.5rem; text-align:center; margin-bottom:3rem; color:var(--terracotta);}
-.services-grid {display:grid; grid-template-columns:repeat(auto-fit, minmax(300px,1fr)); gap:2rem; margin-top:3rem;}
-.service-card {background:var(--beige); border-radius:15px; padding:2rem; text-align:center; transition:all 0.3s; box-shadow:0 5px 15px rgba(0,0,0,0.1);}
-.service-card:hover {transform:translateY(-5px); box-shadow:0 10px 25px rgba(0,0,0,0.15);}
-.service-icon {font-size:3rem; color:var(--gold); margin-bottom:1rem;}
-.service-card h3 {font-family: var(--font-subtitle); font-size:1.5rem; margin-bottom:1rem; color:var(--terracotta);}
-.service-card p {margin-bottom:1rem; color:var(--charcoal);}
-.price-range {font-family: var(--font-subtitle); font-weight:600; color:var(--gold); font-size:1.2rem;}
+.services { padding:5rem 0; background: var(--white); }
+.container { max-width:1200px; margin:0 auto; padding:0 2rem; }
+.section-title { font-family: var(--font-heading); font-size:2.5rem; text-align:center; margin-bottom:3rem; color: var(--terracotta); }
+.services-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:2rem; margin-top:3rem; }
+.service-card { background: var(--beige); border-radius:15px; padding:2rem; text-align:center; transition: all 0.3s; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+.service-card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.15); }
+.service-icon { font-size:3rem; color: var(--gold); margin-bottom:1rem; }
+.service-card h3 { font-family: var(--font-subtitle); font-size:1.5rem; margin-bottom:1rem; color: var(--terracotta);}
+.service-card p { margin-bottom:1rem; color: var(--charcoal);}
+.price-range { font-family: var(--font-subtitle); font-weight:600; color: var(--gold); font-size:1.2rem; }
+
+/* About Section */
+.about { padding:5rem 0; background: linear-gradient(45deg, var(--beige), var(--ivory)); }
+.about-content { display:grid; grid-template-columns:1fr 1fr; gap:3rem; align-items:center; }
+.about-text h2 { font-family: var(--font-heading); font-size:2.2rem; margin-bottom:1.5rem; color: var(--terracotta);}
+.about-text p { margin-bottom:1.5rem; font-size:1.1rem; }
+.about-image { background: var(--gold); height:400px; border-radius:15px; display:flex; align-items:center; justify-content:center; color: var(--white); font-size:1.2rem; text-align:center; }
+
+/* Gallery Section */
+.gallery { padding:5rem 0; background: var(--white);}
+.gallery-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:1rem; margin-top:3rem; }
+.gallery-item { background: var(--beige); height:250px; border-radius:10px; display:flex; align-items:center; justify-content:center; color: var(--terracotta); font-family: var(--font-subtitle); transition: all 0.3s; cursor:pointer; position:relative; overflow:hidden; }
+.gallery-item img { width:100%; height:100%; object-fit:cover; border-radius:10px; transition: transform 0.4s ease, filter 0.3s ease; display:block; }
+.gallery-item:hover img { transform: scale(1.08); filter: brightness(0.9); }
+.gallery-item .caption { position:absolute; left:0; bottom:0; width:100%; padding:0.6rem 0.8rem; font-family: var(--font-subtitle); font-weight:600; font-size:0.95rem; color:#fff; background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.55) 100%); border-radius:0 0 10px 10px; pointer-events:none; }
+
+/* Lightbox */
+.lightbox { display:none; position:fixed; z-index:3000; inset:0; background: rgba(0,0,0,0.85); justify-content:center; align-items:center; padding:2rem; }
+.lightbox .lightbox-img { max-width:90vw; max-height:80vh; border-radius:10px; box-shadow:0 10px 30px rgba(0,0,0,0.5);}
+.lightbox .close { position:absolute; top:15px; right:20px; font-size:2rem; color:#fff; }
+
+/* Testimonials */
+.testimonials { padding:5rem 0; background: var(--terracotta); color: var(--white);}
+.testimonials-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:2rem; margin-top:3rem; }
+.testimonial { background: rgba(255,255,255,0.1); padding:2rem; border-radius:15px; text-align:center;}
+.stars { color: var(--gold); font-size:1.2rem; margin-bottom:1rem;}
+.testimonial p { font-style:italic; margin-bottom:1rem;}
+.author { font-family: var(--font-subtitle); font-weight:600; color: var(--gold); }
+
+/* Contact Section */
+.contact { padding:5rem 0; background: var(--ivory);}
+.contact-content { display:grid; grid-template-columns:1fr 1fr; gap:3rem;}
+.contact-info { background: var(--white); padding:2rem; border-radius:15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);}
+.contact-form { background: var(--white); padding:2rem; border-radius:15px; box-shadow:0 5px 15px rgba(0,0,0,0.1);}
+.form-group { margin-bottom:1.5rem;}
+.form-group label { display:block; margin-bottom:0.5rem; font-family: var(--font-subtitle); font-weight:500; color: var(--terracotta);}
+.form-group input, .form-group select, .form-group textarea { width:100%; padding:0.8rem; border:2px solid var(--beige); border-radius:5px; font-family: var(--font-body); transition:border-color 0.3s;}
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus { outline:none; border-color: var(--gold); }
+.contact-item { display:flex; align-items:center; margin-bottom:1.5rem;}
+.contact-item i { color: var(--gold); font-size:1.5rem; margin-right:1rem; }
+
+/* Footer */
+.footer { background: var(--chocolate); color: var(--white); padding:3rem 0 1rem;}
+.footer-content { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:2rem; margin-bottom:2rem;}
+.footer-section h3 { font-family: var(--font-subtitle); margin-bottom:1rem; color: var(--gold);}
+.footer-section a { color: var(--white); text-decoration:none; transition: color 0.3s;}
+.footer-section a:hover { color: var(--gold);}
+.social-links { display:flex; gap:1rem;}
+.social-links a { color: var(--white); font-size:1.5rem; transition: color 0.3s;}
+.social-links a:hover { color: var(--gold);}
+.footer-bottom { text-align:center; padding-top:2rem; border-top:1px solid rgba(255,255,255,0.1); opacity:0.8; }
+
+/* Reservation Modal */
+.modal { display:none; position:fixed; z-index:2000; left:0; top:0; width:100%; height:100%; background-color: rgba(0,0,0,0.5);}
+.modal-content { background-color: var(--white); margin:5% auto; padding:2rem; border-radius:15px; width:90%; max-width:500px; position:relative;}
+.close { color: var(--charcoal); float:right; font-size:28px; font-weight:bold; cursor:pointer;}
+.close:hover { color: var(--coral);}
+.reservation-form h2 { font-family: var(--font-heading); color: var(--terracotta); margin-bottom:1.5rem;}
+.form-row { display:grid; grid-template-columns:1fr 1fr; gap:1rem; }
+.success-message { background: var(--olive); color: var(--white); padding:1rem; border-radius:5px; margin-bottom:1rem; display:none; }
+
+/* Responsive Design */
+@media(max-width:768px){
+.nav-menu { position:fixed; left:-100%; top:70px; flex-direction:column; background-color: var(--terracotta); width:100%; text-align:center; transition:0.3s; box-shadow: 0 10px 27px rgba(0,0,0,0.05); padding:2rem 0;}
+.nav-menu.active { left:0;}
+.hamburger { display:flex;}
+.hero h1 { font-size:2.5rem;}
+.hero p { font-size:1.1rem;}
+.about-content { grid-template-columns:1fr;}
+.contact-content { grid-template-columns:1fr;}
+}
+
 </style>
 </head>
 <body>
+
 <!-- Header -->
 <header class="header">
-<nav class="nav-container">
-<a href="#home" class="logo">Zuri Braids</a>
-<ul class="nav-menu">
-<li><a href="#home" data-es="Inicio" data-en="Home">Inicio</a></li>
-<li><a href="#services" data-es="Servicios" data-en="Services">Servicios</a></li>
-<li><a href="#gallery" data-es="Galería" data-en="Gallery">Galería</a></li>
-<li><a href="#about" data-es="Nosotros" data-en="About Us">Nosotros</a></li>
-<li><a href="#contact" data-es="Contacto" data-en="Contact">Contacto</a></li>
-</ul>
-<select class="language-selector" onchange="switchLanguage(this.value)">
-<option value="es">ES</option>
-<option value="en">EN</option>
-</select>
-<button class="cta-button" onclick="openModal()">Reservar Cita</button>
-<div class="hamburger" onclick="toggleMenu()">
-<span></span>
-<span></span>
-<span></span>
+<div class="nav-container">
+    <a href="#" class="logo">Zuri Braids</a>
+    <ul class="nav-menu" id="nav-menu">
+        <li><a href="#services" class="lang" key="services">Servicios</a></li>
+        <li><a href="#about" class="lang" key="about">Sobre Nosotros</a></li>
+        <li><a href="#gallery" class="lang" key="gallery">Galería</a></li>
+        <li><a href="#contact" class="lang" key="contact">Contacto</a></li>
+        <li><a href="#" class="cta-button lang" key="book">Reserva</a></li>
+        <li>
+            <select id="language-switcher">
+                <option value="es" selected>ES</option>
+                <option value="en">EN</option>
+            </select>
+        </li>
+    </ul>
+    <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
 </div>
-</nav>
 </header>
 
 <!-- Hero Section -->
-<section id="home" class="hero">
-<div class="hero-content fade-in-up">
-<h1 data-es="Zuri Braids" data-en="Zuri Braids">Zuri Braids</h1>
-<p data-es="Donde tu cabello natural encuentra su arte. Especialistas en trenzas africanas y protective styles con más de 8 años de experiencia."
-data-en="Where your natural hair meets art. Specialists in African braids and protective styles with over 8 years of experience.">Donde tu cabello natural encuentra su arte. Especialistas en trenzas africanas y protective styles con más de 8 años de experiencia.</p>
-<div class="hero-buttons">
-<button class="btn-primary" onclick="openModal()" data-es="Reservar Cita" data-en="Book Appointment">Reservar Cita</button>
-<a href="#services" class="btn-secondary" data-es="Ver Servicios" data-en="View Services">Ver Servicios</a>
-</div>
+<section class="hero" id="hero">
+<div class="hero-content">
+    <h1 class="lang" key="hero-title">Trenzas Africanas Profesionales</h1>
+    <p class="lang" key="hero-subtitle">Transformamos tu cabello con estilos únicos y cuidados especiales.</p>
+    <div class="hero-buttons">
+        <a href="#contact" class="btn-primary lang" key="book-now">Reserva Ahora</a>
+        <a href="#services" class="btn-secondary lang" key="see-services">Ver Servicios</a>
+    </div>
 </div>
 </section>
 
 <!-- Services Section -->
-<section id="services" class="services">
+<section class="services" id="services">
 <div class="container">
-<h2 class="section-title" data-es="Nuestros Servicios" data-en="Our Services">Nuestros Servicios</h2>
-<div class="services-grid">
-<div class="service-card fade-in-up">
-<div class="service-icon"><i class="fas fa-crown"></i></div>
-<h3 data-es="Trenzas Africanas Tradicionales" data-en="Traditional African Braids">Trenzas Africanas Tradicionales</h3>
-<p data-es="Box Braids, Cornrows, Ghana Braids, Fulani Braids. Técnicas ancestrales con un toque moderno."
-data-en="Box Braids, Cornrows, Ghana Braids, Fulani Braids. Ancestral techniques with a modern touch.">Box Braids, Cornrows, Ghana Braids, Fulani Braids. Técnicas ancestrales con un toque moderno.</p>
-<div class="price-range">$80 - $200</div>
-</div>
-<div class="service-card fade-in-up">
-<div class="service-icon"><i class="fas fa-leaf"></i></div>
-<h3 data-es="Protective Styles Modernos" data-en="Modern Protective Styles">Protective Styles Modernos</h3>
-<p data-es="Twist Outs, Bantu Knots, Flat Twists, Halo Braids. Protege tu cabello mientras luces increíble."
-data-en="Twist Outs, Bantu Knots, Flat Twists, Halo Braids. Protect your hair while looking amazing.">Twist Outs, Bantu Knots, Flat Twists, Halo Braids. Protege tu cabello mientras luces increíble.</p>
-<div class="price-range">$60 - $150</div>
-</div>
-<div class="service-card fade-in-up">
-<div class="service-icon"><i class="fas fa-scissors"></i></div>
-<h3 data-es="Cortes y Peinados" data-en="Haircuts & Styles">Cortes y Peinados</h3>
-<p data-es="Cortes modernos y estilos personalizados que realzan tu belleza natural."
-data-en="Modern cuts and customized styles that enhance your natural beauty.">Cortes modernos y estilos personalizados que realzan tu belleza natural.</p>
-<div class="price-range">$40 - $120</div>
-</div>
-<div class="service-card fade-in-up">
-<div class="service-icon"><i class="fas fa-paint-brush"></i></div>
-<h3 data-es="Color y Mechas" data-en="Color & Highlights">Color y Mechas</h3>
-<p data-es="Tintes, mechas, balayage y coloración natural que protege tu cabello."
-data-en="Dyes, highlights, balayage, and natural coloring that protects your hair.">Tintes, mechas, balayage y coloración natural que protege tu cabello.</p>
-<div class="price-range">$50 - $180</div>
-</div>
-</div>
+    <h2 class="section-title lang" key="services-title">Nuestros Servicios</h2>
+    <div class="services-grid">
+        <div class="service-card">
+            <i class="fas fa-hat-wizard service-icon"></i>
+            <h3 class="lang" key="protective">Protective Styles</h3>
+            <p class="lang" key="protective-desc">Estilos que protegen tu cabello y promueven su crecimiento.</p>
+            <p class="price-range">$50 - $120</p>
+        </div>
+        <div class="service-card">
+            <i class="fas fa-spa service-icon"></i>
+            <h3 class="lang" key="natural">Cuidado Capilar Natural</h3>
+            <p class="lang" key="natural-desc">Tratamientos con productos naturales para mantener tu cabello sano.</p>
+            <p class="price-range">$30 - $80</p>
+        </div>
+        <div class="service-card">
+            <i class="fas fa-star service-icon"></i>
+            <h3 class="lang" key="special">Estilos Especiales</h3>
+            <p class="lang" key="special-desc">Trenzas y peinados únicos para ocasiones especiales.</p>
+            <p class="price-range">$70 - $150</p>
+        </div>
+    </div>
 </div>
 </section>
 
 <!-- About Section -->
-<section id="about" class="services" style="background:var(--ivory);">
-<div class="container">
-<h2 class="section-title" data-es="Sobre Nosotros" data-en="About Us">Sobre Nosotros</h2>
-<div class="services-grid">
-<div class="service-card fade-in-up">
-<div class="service-icon"><i class="fas fa-users"></i></div>
-<h3 data-es="Nuestra Historia" data-en="Our Story">Nuestra Historia</h3>
-<p data-es="Zuri Braids nace de la pasión por la belleza afrodescendiente y el cuidado del cabello natural. Más de 8 años brindando experiencia y estilo."
-data-en="Zuri Braids was born from a passion for Afro beauty and natural hair care. Over 8 years delivering expertise and style.">Zuri Braids nace de la pasión por la belleza afrodescendiente y el cuidado del cabello natural. Más de 8 años brindando experiencia y estilo.</p>
-</div>
-<div class="service-card fade-in-up">
-<div class="service-icon"><i class="fas fa-handshake"></i></div>
-<h3 data-es="Nuestra Misión" data-en="Our Mission">Nuestra Misión</h3>
-<p data-es="Ofrecer servicios de trenzado y cuidado capilar de alta calidad, empoderando a cada cliente con confianza y estilo."
-data-en="To offer high-quality braiding and hair care services, empowering every client with confidence and style.">Ofrecer servicios de trenzado y cuidado capilar de alta calidad, empoderando a cada cliente con confianza y estilo.</p>
-</div>
-<div class="service-card fade-in-up">
-<div class="service-icon"><i class="fas fa-eye"></i></div>
-<h3 data-es="Nuestra Visión" data-en="Our Vision">Nuestra Visión</h3>
-<p data-es="Ser reconocidos como la principal referencia en trenzas africanas y estilos protectores en la región."
-data-en="To be recognized as the leading reference in African braids and protective styles in the region.">Ser reconocidos como la principal referencia en trenzas africanas y estilos protectores en la región.</p>
-</div>
-</div>
+<section class="about" id="about">
+<div class="container about-content">
+    <div class="about-text">
+        <h2 class="lang" key="about-title">Sobre Zuri Braids</h2>
+        <p class="lang" key="about-desc">Con más de 8 años de experiencia, Zuri Braids ofrece servicios profesionales de trenzas africanas y cuidados capilares. Nuestro objetivo es resaltar tu belleza natural y cuidar tu cabello.</p>
+    </div>
+    <div class="about-image">
+        Imagen About
+    </div>
 </div>
 </section>
 
 <!-- Gallery Section -->
-<section id="gallery" class="services" style="padding:5rem 0; background:var(--beige);">
+<section class="gallery" id="gallery">
 <div class="container">
-<h2 class="section-title" data-es="Galería" data-en="Gallery">Galería</h2>
-<div class="services-grid">
-<div class="service-card fade-in-up">
-<img src="images/gallery1.jpg" alt="Trenzas Africanas" style="border-radius:15px; width:100%;">
-<h3 data-es="Box Braids" data-en="Box Braids">Box Braids</h3>
-</div>
-<div class="service-card fade-in-up">
-<img src="images/gallery2.jpg" alt="Protective Styles" style="border-radius:15px; width:100%;">
-<h3 data-es="Twist Styles" data-en="Twist Styles">Twist Styles</h3>
-</div>
-<div class="service-card fade-in-up">
-<img src="images/gallery3.jpg" alt="Bantu Knots" style="border-radius:15px; width:100%;">
-<h3 data-es="Bantu Knots" data-en="Bantu Knots">Bantu Knots</h3>
-</div>
-<div class="service-card fade-in-up">
-<img src="images/gallery4.jpg" alt="Fulani Braids" style="border-radius:15px; width:100%;">
-<h3 data-es="Fulani Braids" data-en="Fulani Braids">Fulani Braids</h3>
-</div>
-</div>
+    <h2 class="section-title lang" key="gallery-title">Galería</h2>
+    <div class="gallery-grid">
+        <div class="gallery-item">
+            <img src="images/gallery1.jpg" alt="Galería 1">
+            <div class="caption">Trenzas Box Braids</div>
+        </div>
+        <div class="gallery-item">
+            <img src="images/gallery2.jpg" alt="Galería 2">
+            <div class="caption">Twist Styles</div>
+        </div>
+        <div class="gallery-item">
+            <img src="images/gallery3.jpg" alt="Galería 3">
+            <div class="caption">Cornrows Elegantes</div>
+        </div>
+        <div class="gallery-item">
+            <img src="images/gallery4.jpg" alt="Galería 4">
+            <div class="caption">Protective Styles</div>
+        </div>
+    </div>
 </div>
 </section>
 
 <!-- Contact Section -->
-<section id="contact" class="services" style="background:var(--ivory);">
-<div class="container">
-<h2 class="section-title" data-es="Contacto" data-en="Contact">Contacto</h2>
-<div class="services-grid">
-<div class="service-card fade-in-up">
-<div class="service-icon"><i class="fas fa-map-marker-alt"></i></div>
-<h3 data-es="Ubicación" data-en="Location">Ubicación</h3>
-<p data-es="Ciudad de Panamá, Panamá" data-en="Panama City, Panama">Ciudad de Panamá, Panamá</p>
+<section class="contact" id="contact">
+<div class="container contact-content">
+    <div class="contact-info">
+        <h3 class="lang" key="contact-title">Información de Contacto</h3>
+        <div class="contact-item"><i class="fas fa-phone"></i> +507 6000 0000</div>
+        <div class="contact-item"><i class="fas fa-envelope"></i> contacto@zuribraids.com</div>
+        <div class="contact-item"><i class="fas fa-map-marker-alt"></i> Ciudad de Panamá, Panamá</div>
+    </div>
+    <div class="contact-form">
+        <h3 class="lang" key="contact-form-title">Reserva tu cita</h3>
+        <form id="reservationForm" class="reservation-form">
+            <div class="success-message" id="success-message">¡Formulario enviado exitosamente!</div>
+            <div class="form-group">
+                <label class="lang" key="name-label" for="name">Nombre</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label class="lang" key="email-label" for="email">Correo Electrónico</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label class="lang" key="service-label" for="service">Servicio</label>
+                <select id="service" name="service" required>
+                    <option value="protective">Protective Styles</option>
+                    <option value="natural">Cuidado Capilar Natural</option>
+                    <option value="special">Estilos Especiales</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label class="lang" key="date-label" for="date">Fecha</label>
+                <input type="date" id="date" name="date" required>
+            </div>
+            <div class="form-group">
+                <label class="lang" key="time-label" for="time">Hora</label>
+                <input type="time" id="time" name="time" required>
+            </div>
+            <button type="submit" class="cta-button lang" key="submit">Enviar</button>
+        </form>
+    </div>
 </div>
-<div class="service-card fade-in-up">
-<div class="service-icon"><i class="fas fa-phone-alt"></i></div>
-<h3 data-es="Teléfono" data-en="Phone">Teléfono</h3>
-<p data-es="+507 123 4567" data-en="+507 123 4567">+507 123 4567</p>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+<div class="container footer-content">
+    <div class="footer-section">
+        <h3>Zuri Braids</h3>
+        <p>Expertos en trenzas africanas y cuidados capilares. Síguenos en nuestras redes sociales.</p>
+        <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-tiktok"></i></a>
+        </div>
+    </div>
+    <div class="footer-section">
+        <h3>Links</h3>
+        <a href="#services" class="lang" key="services">Servicios</a><br>
+        <a href="#about" class="lang" key="about">Sobre Nosotros</a><br>
+        <a href="#gallery" class="lang" key="gallery">Galería</a><br>
+        <a href="#contact" class="lang" key="contact">Contacto</a>
+    </div>
 </div>
-<div class="service-card fade-in-up">
-<div class="service-icon"><i class="fas fa-envelope"></i></div>
-<h3 data-es="Email" data-en="Email">Email</h3>
-<p data-es="contacto@zuribraids.com" data-en="contact@zuribraids.com">contacto@zuribraids.com</p>
-</div>
-</div>
-<!-- Footer Section -->
-<footer class="footer" style="background:var(--chocolate); color:var(--white); padding:3rem 0 1rem;">
-<div class="container">
-<div class="services-grid">
-<div class="service-card fade-in-up">
-<h3 data-es="Zuri Braids" data-en="Zuri Braids">Zuri Braids</h3>
-<p data-es="Especialistas en trenzas africanas y cuidado capilar natural."
-data-en="Specialists in African braids and natural hair care.">Especialistas en trenzas africanas y cuidado capilar natural.</p>
-<div class="social-links" style="display:flex; gap:1rem;">
-<a href="#"><i class="fab fa-instagram"></i></a>
-<a href="#"><i class="fab fa-facebook-f"></i></a>
-<a href="#"><i class="fab fa-tiktok"></i></a>
-<a href="#"><i class="fab fa-whatsapp"></i></a>
-</div>
-</div>
-<div class="service-card fade-in-up">
-<h3 data-es="Servicios" data-en="Services">Servicios</h3>
-<ul style="list-style:none;">
-<li><a href="#services" data-es="Box Braids" data-en="Box Braids">Box Braids</a></li>
-<li><a href="#services" data-es="Cornrows" data-en="Cornrows">Cornrows</a></li>
-<li><a href="#services" data-es="Protective Styles" data-en="Protective Styles">Protective Styles</a></li>
-<li><a href="#services" data-es="Ocasiones Especiales" data-en="Special Occasions">Ocasiones Especiales</a></li>
-</ul>
-</div>
-<div class="service-card fade-in-up">
-<h3 data-es="Enlaces Rápidos" data-en="Quick Links">Enlaces Rápidos</h3>
-<ul style="list-style:none;">
-<li><a href="#about" data-es="Sobre Nosotros" data-en="About Us">Sobre Nosotros</a></li>
-<li><a href="#gallery" data-es="Galería" data-en="Gallery">Galería</a></li>
-<li><a href="#contact" data-es="Contacto" data-en="Contact">Contacto</a></li>
-<li><a href="#" onclick="openModal()" data-es="Reservar Cita" data-en="Book Appointment">Reservar Cita</a></li>
-</ul>
-</div>
-<div class="service-card fade-in-up">
-<h3 data-es="Contacto" data-en="Contact">Contacto</h3>
-<p><i class="fas fa-map-marker-alt"></i> Ciudad de Panamá, Panamá</p>
-<p><i class="fas fa-phone-alt"></i> +507 123 4567</p>
-<p><i class="fas fa-envelope"></i> contacto@zuribraids.com</p>
-</div>
-</div>
-<div class="footer-bottom" style="text-align:center; padding-top:2rem; border-top:1px solid rgba(255,255,255,0.1); opacity:0.8;">
-<p>&copy; 2025 Zuri Braids. Todos los derechos reservados. | Diseñado con ❤️ para celebrar la belleza natural.</p>
-</div>
+<div class="footer-bottom">
+    &copy; 2025 Zuri Braids. Todos los derechos reservados.
 </div>
 </footer>
 
-<!-- Reservation Modal -->
-<div id="reservationModal" class="modal">
-<div class="modal-content">
-<span class="close" onclick="closeModal()">&times;</span>
-<form class="reservation-form" onsubmit="submitReservation(event)">
-<h2 data-es="Reservar Cita" data-en="Book Appointment">Reservar Cita</h2>
-<div id="reservation-success" class="success-message" style="display:none;">¡Reserva enviada exitosamente! Te contactaremos para confirmar tu cita.</div>
-<div class="form-group">
-<label for="res-name" data-es="Nombre Completo *" data-en="Full Name *">Nombre Completo *</label>
-<input type="text" id="res-name" name="res-name" required>
-</div>
-<div class="form-row">
-<div class="form-group">
-<label for="res-email" data-es="Email *" data-en="Email *">Email *</label>
-<input type="email" id="res-email" name="res-email" required>
-</div>
-<div class="form-group">
-<label for="res-phone" data-es="Teléfono *" data-en="Phone *">Teléfono *</label>
-<input type="tel" id="res-phone" name="res-phone" required>
-</div>
-</div>
-<div class="form-group">
-<label for="res-service" data-es="Servicio Deseado *" data-en="Desired Service *">Servicio Deseado *</label>
-<select id="res-service" name="res-service" required>
-<option value="">Seleccionar servicio</option>
-<option value="box-braids">Box Braids - $80-$200</option>
-<option value="cornrows">Cornrows - $60-$120</option>
-<option value="ghana-braids">Ghana Braids - $100-$180</option>
-<option value="fulani-braids">Fulani Braids - $100-$180</option>
-<option value="twist-outs">Twist Outs - $60-$100</option>
-<option value="bantu-knots">Bantu Knots - $80-$120</option>
-<option value="ocasiones-especiales">Ocasiones Especiales - $120-$300</option>
-<option value="mantenimiento">Cuidado y Mantenimiento - $40-$80</option>
-</select>
-</div>
-<div class="form-row">
-<div class="form-group">
-<label for="res-date" data-es="Fecha Preferida *" data-en="Preferred Date *">Fecha Preferida *</label>
-<input type="date" id="res-date" name="res-date" required>
-</div>
-<div class="form-group">
-<label for="res-time" data-es="Hora Preferida *" data-en="Preferred Time *">Hora Preferida *</label>
-<select id="res-time" name="res-time" required>
-<option value="">Seleccionar hora</option>
-<option value="09:00">9:00 AM</option>
-<option value="10:00">10:00 AM</option>
-<option value="11:00">11:00 AM</option>
-<option value="12:00">12:00 PM</option>
-<option value="13:00">1:00 PM</option>
-<option value="14:00">2:00 PM</option>
-<option value="15:00">3:00 PM</option>
-<option value="16:00">4:00 PM</option>
-<option value="17:00">5:00 PM</option>
-</select>
-</div>
-</div>
-<div class="form-group">
-<label for="res-notes" data-es="Notas Adicionales" data-en="Additional Notes">Notas Adicionales</label>
-<textarea id="res-notes" name="res-notes" rows="3" placeholder="Describe el estilo que tienes en mente, longitud del cabello, etc."></textarea>
-</div>
-<button type="submit" class="btn-primary" style="width:100%;" data-es="Enviar Reserva" data-en="Submit Booking">Enviar Reserva</button>
-</form>
-</div>
-</div>
-
-<!-- Lightbox -->
-<div id="lightbox" class="lightbox" aria-hidden="true" style="display:none; justify-content:center; align-items:center;">
-<span class="close" role="button" aria-label="Cerrar">&times;</span>
-<img class="lightbox-img" src="" alt="">
-</div>
-
-<!-- Scripts -->
 <script>
-function toggleMenu(){
-document.querySelector('.nav-menu').classList.toggle('active');
-}
-function openModal(){
-document.getElementById('reservationModal').style.display='block';
-const today=new Date().toISOString().split('T')[0];
-document.getElementById('res-date').setAttribute('min',today);
-}
-function closeModal(){
-document.getElementById('reservationModal').style.display='none';
-}
-// Smooth scroll
-document.querySelectorAll('a[href^="#"]').forEach(anchor=>{
-anchor.addEventListener('click',function(e){
-e.preventDefault();
-const target=document.querySelector(this.getAttribute('href'));
-if(target){target.scrollIntoView({behavior:'smooth',block:'start'});}
-document.querySelector('.nav-menu').classList.remove('active');
-});
-});
-// Animation on scroll
-const observer=new IntersectionObserver(function(entries){
-entries.forEach(entry=>{
-if(entry.isIntersecting){entry.target.classList.add('fade-in-up');}
-});
-},{threshold:0.1,rootMargin:'0px 0px -50px 0px'});
-document.querySelectorAll('.service-card, .gallery-item, .testimonial, .about-text, .about-image, .contact-info, .contact-form').forEach(el=>observer.observe(el));
-// Header scroll effect
-window.addEventListener('scroll',function(){
-const header=document.querySelector('.header');
-if(window.scrollY>100){
-header.style.background='linear-gradient(135deg, rgba(139,69,19,0.95), rgba(60,24,16,0.95))';
-header.style.backdropFilter='blur(10px)';
-}else{
-header.style.background='linear-gradient(135deg, var(--terracotta), var(--chocolate))';
-header.style.backdropFilter='none';
-}
+// Hamburger
+const hamburger = document.getElementById('hamburger');
+const navMenu = document.getElementById('nav-menu');
+hamburger.addEventListener('click', () => {
+    navMenu.classList.toggle('active');
 });
 
-// Lightbox functionality
-(function(){
-const items=Array.from(document.querySelectorAll('.gallery-item img'));
-const lightbox=document.getElementById('lightbox');
-const lightboxImg=lightbox.querySelector('.lightbox-img');
-items.forEach(item=>{
-item.addEventListener('click',function(){
-lightboxImg.src=this.src;
-lightbox.style.display='flex';
-lightbox.setAttribute('aria-hidden','false');
+// Lightbox
+const galleryItems = document.querySelectorAll('.gallery-item img');
+galleryItems.forEach(img => {
+    img.addEventListener('click', () => {
+        const lightbox = document.createElement('div');
+        lightbox.classList.add('lightbox');
+        lightbox.innerHTML = `<img src="${img.src}" class="lightbox-img"><span class="close">&times;</span>`;
+        document.body.appendChild(lightbox);
+        lightbox.style.display = 'flex';
+        lightbox.querySelector('.close').addEventListener('click', () => {
+            lightbox.remove();
+        });
+    });
 });
-});
-lightbox.querySelector('.close').addEventListener('click',function(){
-lightbox.style.display='none';
-lightbox.setAttribute('aria-hidden','true');
-});
-})();
 
-// Language switch
-function setLanguage(lang){
-document.querySelectorAll('[data-es]').forEach(el=>{
-if(lang==='es'){el.innerText=el.getAttribute('data-es');}else{el.innerText=el.getAttribute('data-en');}
-});
-}
-// Example: setLanguage('es') or setLanguage('en')
-window.setLanguage=setLanguage;
+// Language Switcher
+const translations = {
+    en: {
+        'services': 'Services',
+        'about': 'About Us',
+        'gallery': 'Gallery',
+        'contact': 'Contact',
+        'book': 'Book Now',
+        'hero-title': 'Professional African Braids',
+        'hero-subtitle': 'Transform your hair with unique styles and special care.',
+        'book-now': 'Book Now',
+        'see-services': 'See Services',
+        'services-title': 'Our Services',
+        'protective': 'Protective Styles',
+        'protective-desc': 'Styles that protect your hair and promote growth.',
+        'natural': 'Natural Hair Care',
+        'natural-desc': 'Treatments with natural products to keep your hair healthy.',
+        'special': 'Special Styles',
+        'special-desc': 'Unique braids and hairstyles for special occasions.',
+        'about-title': 'About Zuri Braids',
+        'about-desc': 'With over 8 years of experience, Zuri Braids offers professional African braiding and hair care services. Our goal is to enhance your natural beauty and care for your hair.',
+        'gallery-title': 'Gallery',
+        'contact-title': 'Contact Information',
+        'contact-form-title': 'Book Your Appointment',
+        'name-label': 'Name',
+        'email-label': 'Email',
+        'service-label': 'Service',
+        'date-label': 'Date',
+        'time-label': 'Time',
+        'submit': 'Submit'
+    },
+    es: {
+        // Spanish is default, no need to redefine
+    }
+};
 
-// Reservation form submit (dummy)
-function submitReservation(e){
-e.preventDefault();
-document.getElementById('reservation-success').style.display='block';
-e.target.reset();
-setTimeout(()=>{closeModal(); document.getElementById('reservation-success').style.display='none';},3000);
-}
+const languageSwitcher = document.getElementById('language-switcher');
+languageSwitcher.addEventListener('change', e => {
+    const lang = e.target.value;
+    document.querySelectorAll('.lang').forEach(el => {
+        const key = el.getAttribute('key');
+        if(translations[lang] && translations[lang][key]){
+            el.innerText = translations[lang][key];
+        } else if(lang === 'es'){
+            // Optionally reset to original Spanish text
+            const original = el.getAttribute('data-original');
+            if(original) el.innerText = original;
+        }
+    });
+});
+
+// Store original Spanish text
+document.querySelectorAll('.lang').forEach(el => {
+    el.setAttribute('data-original', el.innerText);
+});
+
+// Reservation Form Submit
+const reservationForm = document.getElementById('reservationForm');
+const successMessage = document.getElementById('success-message');
+reservationForm.addEventListener('submit', e => {
+    e.preventDefault();
+    successMessage.style.display = 'block';
+    reservationForm.reset();
+});
 </script>
+
+</body>
+</html>
